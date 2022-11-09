@@ -36,6 +36,12 @@ const schema = new Schema({
         type: Number
     },
     roles: [String],
+    /*products: [{
+        id:{
+            type: Schema.ObjectId,
+            ref: 'Products'
+        }
+    }]*/
 });
 
 const Users = mongoose.model('Users', schema)
