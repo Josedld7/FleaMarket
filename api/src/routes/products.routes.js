@@ -58,6 +58,17 @@ router.get("/productuser", async (req, res) => {
     }
 });
 
+//ruta de filtros combinados para revisar, filtra por una sola y por combinadas
+router.get("/productfilter", async (req, res) => {
+    try{
+        let { condition, category, ordPrice } = req.query;
+
+            const filter = await Products.find({condition: new RegExp(condition, "i"), category: new RegExp(category, "i")}).sort({price: ordPrice})
+            res.status(200).send(filter);
+    } catch(error){
+        res.status(500).send(error.message)
+    }
+});
 
 // Route para actualizar un producto 
 router.put("/product/:id", async (req, res) => {
