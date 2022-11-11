@@ -1,0 +1,37 @@
+.landing{
+    width: 100%;
+    background-color: rgb(98, 162, 207);
+    height: 930px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logolanding{
+    width: 1200px;
+    height: 310px;
+    
+}
+.bienvenidos{
+    color: white;
+    font-size: 100px;
+    font-weight: 700;
+    padding-top: 50px;
+    margin-left: 40px;
+}
+
+.contribuye{
+    color: white;
+    font-size: 70px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.botonvamos{
+    width: 220px;
+    height: 80px;
+    background-color: rgb(39, 110, 168);
+    color: white;
+    font-size: 40px;
+    margin-top: 100px;
+    border-radius: 20px;
+}

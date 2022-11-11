@@ -1,0 +1,34 @@
+.navbar {
+    background-color: rgb(16, 101, 161);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+   
+}
+
+.navbardos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.logonav{
+    width: 40%;
+    margin-left: 140px;
+}
+.carrito{
+    width: 10%;
+    margin-left: 300px;
+
+}
+.searchbar{
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px
+}

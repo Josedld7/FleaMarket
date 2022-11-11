@@ -1,0 +1,15 @@
+.searcher{
+    width: 800px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px
+}
+
+.contenedorsearch{
+    margin-left: 200px;
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+}

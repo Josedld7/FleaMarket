@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // import { getProductByName } from "../../actions/index";
 
 import products, {product1} from '../../testData';
+import "./SearchBar.css"
  
 
 export  function SearchBar() {  
@@ -29,8 +30,8 @@ export  function SearchBar() {
 
   return (
     <>
-      <div>
-        <input  
+      <div className="contenedorsearch">
+        <input  className="searcher"
           id="search"
           type="text"
           placeholder="Search..."
