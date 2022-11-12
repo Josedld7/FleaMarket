@@ -1,0 +1,151 @@
+/* $BgColor: rgb(255, 255, 255);
+body{ 
+    background-color:$BgColor;
+} */
+
+$midnight: #0b78e6;
+$clouds: #ecf0f1;
+$ColorLP: rgb(39, 110, 168);
+ 
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.img-product{
+  
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #0b78e6;
+
+}
+// Layout
+.row {
+  display:flex;
+  .col {
+    flex:1;
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+}
+/* Accordion styles */
+.tabs {
+  border-radius: 5px;
+  overflow: hidden;
+  //box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+.tab {
+  
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: $midnight;
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+    &:hover {
+      background: darken($midnight, 10%);
+    }
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: $midnight;
+    background: white;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $midnight;
+    cursor: pointer;
+    &:hover {
+      background: darken($midnight, 10%);
+    }
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    background: darken($midnight, 10%);
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
+}
+ 
+/* 
+.disfruta{
+    width: 100%;
+    height: 250px;
+    background-color: rgb(192, 134, 221);
+    row-gap: 10px;
+    display: flex;
+    cursor: pointer;
+    
+    &-info {
+        color: white;
+        font-size: 20px;
+        width: 60%;
+        align-items: center;
+        padding-left: 90px;
+        
+
+        & > div:nth-child(1) {  
+            color: rgb(255, 255, 255);
+            font-size: 60px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            font-weight: 600;
+            margin-top: 50px;
+            padding-left: 40px;
+        }
+
+
+        & > div:nth-child(2) {
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            flex-direction: column;
+            column-gap: 5px;
+            padding-left: 40px;
+            margin-top: 16px;
+            display: flex;
+           
+        }
+    }
+
+    &-foto{
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+       
+        & > img {
+            width: 60%;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            display:flex
+        }
+    }
+} */

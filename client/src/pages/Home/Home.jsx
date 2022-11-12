@@ -8,7 +8,7 @@ import FilterUsed from '../../components/FilterUsed/FilterUsed';
 
 function Home() {
   return (
-    <div>
+    <div>            
       <FilterCat />
       <FilterUsed />
       <Cards />
