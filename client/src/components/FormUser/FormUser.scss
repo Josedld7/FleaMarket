@@ -1,0 +1,127 @@
+$azul: rgb(88, 167, 207);
+$BorderColor: rgba(96, 186, 231, 0.438);
+.form-total {
+  display: flex;
+  flex-direction: column;
+
+  align-content: center;
+
+  color: $azul;
+  width: 420px;
+  height: auto;
+  padding: 30px;
+  margin: 30px;
+  border: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: $BorderColor;
+  background-color: rgba(233, 233, 233, 0.623);
+  /* box-shadow: 1px 1px 1px rgb(227, 184, 8);   */
+
+  .title-form{
+    margin: 0px 70px;
+    font-size: 25px;
+    font-weight: bold;
+    align-items: center;
+  } 
+  .labels{
+      margin:15px 0px -5px 0px;       
+      font-weight:bolder;
+    }
+  .inputsForm {
+   
+    input {
+      height: 35px;
+      width: 340px;
+      margin: 5px;
+      border: 1px solid;
+      border-radius: 3px;
+      border-color: $BorderColor;
+      color: $azul;
+      background-color: aliceblue;
+    }
+  }
+  
+  .button-create {
+    width: 100px;
+    height: 40px;
+    margin: 40px 0px 30px 0px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    background-color: $azul;
+    font-size: 18px;
+  }
+  .button-create:hover {
+    width: 100px;
+    height: 40px;
+    margin: 40px 0px 30px 0px;
+    border-radius: 5px;
+    border: none;
+    
+    background-color: rgb(51, 134, 230);
+  }
+ 
+}
+
+/*   .error {
+    font-size: 14px;
+    margin: 0px 0px 15px;
+    font-weight: lighter;
+    color: rgb(134, 131, 131);
+  }
+
+.dietasSelect {
+  margin-top: 5px;
+  margin-left: 100px;
+  width: 480px;
+  border-radius: 5px;
+  border: 1px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgb(105, 79, 13);
+  background-color: rgba(40, 40, 40, 0.6);
+}
+.selectsForm {
+  margin: 30px 0px 30px 0px;
+  width: 80%;
+  height: 30px;
+  font-size: 16px;
+  color: $azul;
+  border: 1px solid rgb(166, 125, 22);
+  border-radius: 4px;
+  background-color: rgb(102, 101, 101);
+}
+
+.divDelete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin: 5px 80px;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(88, 88, 87);
+}
+
+ */
+.buttonX {
+  width: 30px;
+  height: 38px;
+  margin-right: 60px;
+  color: rgb(88, 88, 87);
+  border-radius: 5px;
+  border: none;
+  background-color: $azul;
+  font-weight: bold;
+  font-size: 18px;
+}
+.buttonX:hover {
+  width: 30px;
+  height: 38px;
+  border-radius: 5px;
+  border: none;
+  color: $azul;
+  background-color: rgb(80, 79, 78);
+}

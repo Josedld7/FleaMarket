@@ -1,8 +1,4 @@
-
-/* $BgColor: rgb(255, 255, 255);
-body{ 
-    background-color:$BgColor;
-} */
+ 
 
 $midnight: #0b78e6;
 $clouds: #ecf0f1;
@@ -10,8 +6,8 @@ $ColorLP: rgb(39, 110, 168);
  
 input {
   position: absolute;
-  opacity: 0;
-  z-index: -1;
+  //opacity: 0;
+  //z-index: -1;
 }
 .img-product{
   
@@ -30,7 +26,7 @@ input {
     }
   }
 }
-/* Accordion styles */
+ 
 .tabs {
   border-radius: 5px;
   overflow: hidden;
@@ -48,7 +44,7 @@ input {
     background: $midnight;
     font-weight: bold;
     cursor: pointer;
-    /* Icon */
+ 
     &:hover {
       background: darken($midnight, 10%);
     }
