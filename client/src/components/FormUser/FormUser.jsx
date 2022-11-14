@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postFormUser} from "../../actions";
+import { getUsers,postFormUser} from "../../actions";
 import { validate } from "./Validators";
 import './FormUser.scss'
  
@@ -25,6 +25,12 @@ export function FormUser(){
     })
     const[errors, setErrors] = useState({}); 
 
+
+    /* useEffect(() => { 
+        dispatch(getUsers())
+    },[dispatch]) */
+
+
     function handleChange(e){
         setInputUsers({
             ...InputUsers,
@@ -36,14 +42,37 @@ export function FormUser(){
         }))  
         console.log(InputUsers)
     } 
-
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (!InputUsers.name) {
+             alert("Se requiere llenar el Formulario de Creacion")
+        }
+        else{
+            //dispatch(postFormUser(InputUsers))
+            setErrors(validate(InputUsers))
+            alert("User created")
+            setInputUsers({
+                image: "",
+                name: "",
+                lastname: "",
+                password:"",
+                email:"", 
+                country:[],
+                city:[],
+                addres:"",
+                telephone:"",
+                roles:"",  
+        })
+        }
+        
+    }
     return(
     <div   class="grid  sm:grid-cols     ">
         <div   className='imgF'>
    
         
               
-            <form className="form-total"   >
+            <form className="form-total"  onSubmit={(e) => handleSubmit(e)}  >
             <h3 className="title-form">Create Users</h3>
              
                 <label className="labels">Firstname </label>
@@ -61,7 +90,7 @@ export function FormUser(){
 
                 <label className="labels">Password </label>
                 <div className="inputsForm">                    
-                    <input placeholder=" Password" type="text" name="password"   /> <br/>
+                    <input placeholder=" Password" type="password" name="password"  value={InputUsers.password} onChange={(e) => handleChange(e)}  /> <br/>
                     {(errors.password && <p className="error">{errors.password}</p>)}   
                  
 
@@ -69,7 +98,7 @@ export function FormUser(){
                 
                 <label className="labels">Email</label>
                 <div className="inputsForm">
-                    <input placeholder=" Email" type="text" name="email"  /> <br/> 
+                    <input placeholder=" Email" type="text" name="email"  value={InputUsers.email} onChange={(e) => handleChange(e)} /> <br/> 
                     {(errors.email && <p className="error">{errors.email}</p>)}   
               
                 </div>   
@@ -89,7 +118,7 @@ export function FormUser(){
                  </div>
                  <label className="labels">Addres </label>
                 <div className="inputsForm">
-                     <input placeholder=" Addres" type="text" name="addres"  /> <br/>
+                     <input placeholder=" Addres" type="addres" name="addres" value={InputUsers.addres} onChange={(e) => handleChange(e)} /> <br/>
                      {(errors.addres && <p className="error">{errors.addres}</p>)}   
                 
                  </div>
@@ -97,7 +126,7 @@ export function FormUser(){
                  
                  <label className="labels">Telephone </label>
                 <div className="inputsForm">
-                     <input placeholder=" Telephone" type="text" name="telephone"  /> <br/>
+                     <input placeholder=" Telephone" type="text" name="telephone"  value={InputUsers.telephone} onChange={(e) => handleChange(e)}/> <br/>
                      {(errors.telephone && <p className="error">{errors.telephone}</p>)}   
                 
                  </div>
@@ -124,3 +153,5 @@ export function FormUser(){
     </div>
     )
 }
+
+
