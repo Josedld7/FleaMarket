@@ -1,9 +1,22 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import  { product1 } from '../../testData.js'
-
+import './Detail.scss'
+import { loadProduct } from '../../actions/index.js'
 
 export function Detail() {
+
+   /* const params = useParams();
+    const id = parseInt(params.id);
+
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.products);
+    const p = useSelector(state => state.product);
+
+    useEffect(() => {
+      dispatch(loadProduct(id, products));
+    }) */
+    
 const getDetail = () => {
       return product1
     }
