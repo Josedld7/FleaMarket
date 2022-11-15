@@ -1,10 +1,11 @@
-import express from 'express'
-import morgan from 'morgan'
-import cors from 'cors'
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
 import {connectDB}  from './db.js';
 import routerProduct from './src/routes/products.routes.js';
-import routerUsers from './src/routes/users.routes.js'
-import routerCategory from '../api/src/routes/category.routes.js'
+import routerUsers from './src/routes/users.routes.js';
+import routerCategory from './src/routes/category.routes.js';
+import { PORT } from './config.js';
 
 
 const app = express();
@@ -18,8 +19,8 @@ app.use("/api", routerProduct);
 app.use("/api", routerUsers);
 app.use("/api", routerCategory);
 
-app.listen(3001, () => {
-    console.log('% listening at 3001'); 
+app.listen(PORT, () => {
+    console.log(`% listening at ${PORT}`); 
   });
 
 
