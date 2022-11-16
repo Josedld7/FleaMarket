@@ -1,5 +1,3 @@
-import im from '../images/product.jpg';
-
 import {
   LOAD_PRODUCTS,
   LOAD_PRODUCT,
@@ -24,6 +22,7 @@ export function loadProducts() {
             condition,
             category,
             rating,
+            image,
           } = p;
           return {
             id: _id,
@@ -35,7 +34,7 @@ export function loadProducts() {
             rating: {
               rate: rating
             },
-            image: im
+            image,
           }
         });
         dispatch({
