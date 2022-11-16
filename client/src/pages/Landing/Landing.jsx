@@ -5,6 +5,7 @@ import {loadProducts, loadCategories} from '../../actions/index';
 import "./Landing.css";
 import foto from "../../images/logodos.png";
 
+import axios from 'axios';
 const endPoint = 'http://localhost:3001';
 
 function Landing(props) {
@@ -12,11 +13,11 @@ function Landing(props) {
   
   useEffect(() => {
     // ---> It can be used to see what is coming from the api, don't delete please <---
-    // const fetchProducts = async () => {
-    //   const response = await axios.get(`${endPoint}/api/products`);
-    //   console.log(response.data);
-    // }
-    // fetchProducts();
+    const fetchProducts = async () => {
+      const response = await axios.get(`${endPoint}/api/products`);
+      console.log(response.data);
+    }
+    fetchProducts();
     dispatch(loadProducts());
     dispatch(loadCategories());
   });
