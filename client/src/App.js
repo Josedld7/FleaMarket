@@ -8,6 +8,7 @@ import Landing from './pages/Landing/Landing.jsx';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './components/Profile/Profile.jsx'
+import Payment from './components/Payment/Payment';
 import "./App.css"
 import { FormUser } from './components/FormUser/FormUser.jsx';
 
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route exact path="/FormUser">
             <FormUser/>            
+          </Route>
+          <Route exact path="/payment">
+            <Payment/>
           </Route>
         </Switch>
       </BrowserRouter>
