@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import Card from './Card.jsx'
 import styles from './Cards.module.css'
-import { loadProducts, loadProduct } from '../../store/actions/index.js'
+import { loadProduct } from '../../store/actions/index.js'
 import { useEffect} from 'react'
 
 const Cards = () => {
@@ -10,14 +10,12 @@ const Cards = () => {
 
   useEffect(() => { dispatch(loadProduct()) }, [])
 
-  useEffect(() => {
-    dispatch(loadProducts())
-  },[])
+  const productCard = products.filterProducts;
 
    return (
     <div className={styles.contenedor_cardscero}>
       <div className={styles.contenedor_cards}>
-        {products.map((e, i) => {
+        {productCard && productCard.map((e, i) => {
           return (
             <Card
               key={i}

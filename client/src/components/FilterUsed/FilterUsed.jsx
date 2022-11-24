@@ -1,17 +1,13 @@
 import React from "react";
 import styles from "./FilterUsed.module.css";
-import { useDispatch } from "react-redux";
-import { filterUsed } from "../../store/actions/index.js";
 
-const FiltUsed = () => {
-  const dispatch = useDispatch();
+const FiltUsed = ({ setCondition }) => {
 
   const handleCondition = (e) => {
     e.preventDefault();
-    if (e.target.value === "All") {
-      dispatch(filterUsed(""));
-    } else {
-      dispatch(filterUsed(e.target.value));
+    if (e.target.value !== "All") {
+      const condition = e.target.value;
+      setCondition(condition)
     }
   };
 
@@ -23,11 +19,12 @@ const FiltUsed = () => {
         onChange={handleCondition}
         id="condition"
       >
-        <option value="All">All</option>
+        <option value="">All</option>
         <option value="Nuevo">New</option>
         <option value="Usado">Used</option>
       </select>
     </div>
   );
 };
+
 export default FiltUsed;

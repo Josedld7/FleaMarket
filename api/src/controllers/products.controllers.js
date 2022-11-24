@@ -15,7 +15,7 @@ export const getAllProducts = async (req, res) => {
   try {
 
       let page = parseInt(req.query.page) - 1 || 0;
-      let limit = parseInt(req.query.limit) || 8;
+      let limit;
       let condition = req.query.condition || "";
       let category = req.query.category || "All";
       let name = req.query.name || "";
@@ -27,6 +27,8 @@ export const getAllProducts = async (req, res) => {
       
       category === "All"? category = [...allCategories] : category = req.query.category.split(",").toString();
 
+      req.query.category === "All" ? limit = 9 : limit = 31;
+      
       let sortBy = {};
       if(sort === "asc"){
         sortBy["price"] = 1;
@@ -37,6 +39,8 @@ export const getAllProducts = async (req, res) => {
       
       const products = await Products.find({ title: {$regex: name, $options: 'i'}, condition: {$regex:condition, $options: 'i'} })
       .sort(sortBy)
+      .skip(page * limit)
+      .limit(limit)
       .populate('user')
       .populate({
         path: 'category',
@@ -46,7 +50,24 @@ export const getAllProducts = async (req, res) => {
 
       const categoryProducts = products.filter((p) => p.category !== null);
 
-      const result = category !== "All" ? categoryProducts : products;
+      const filterProducts = category !== "All" ? categoryProducts : products;
+
+      const total = await Products.countDocuments({
+        title: {$regex: name, $options: "i"},
+        condition: {$regex: condition, $options: "i"}
+      })
+      .populate({
+        path: 'category',
+        match: {name: category}
+      })
+      .exec();
+
+      const result = {
+        total,
+        page: page + 1,
+        limit,
+        filterProducts
+      }
 
       return res.status(200).json(result);
 

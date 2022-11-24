@@ -1,10 +1,7 @@
-import Cards from './../../components/Cards/Cards.jsx'
-import Header from '../../components/Header/Header.jsx'
-import Footer from '../../components/Footer/Footer.jsx'
-import Pagination from '../../components/Pagination/Pagination.jsx'
-import Carousel from "../../components/Carousel/Carousel.jsx"
-// import styles from './Home.module.css'
-
+import Cards from './../../components/Cards/Cards.jsx';
+import Header from '../../components/Header/Header.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
+import Carousel from "../../components/Carousel/Carousel.jsx";
 
 function Home() {
   return (
@@ -16,9 +13,6 @@ function Home() {
       </section>
       <section>
         <Carousel />
-      </section>
-      <section>
-        <Pagination />
       </section>
       <section>
         <div>

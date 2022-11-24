@@ -1,70 +1,34 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import styles from "./filtCat.module.css";
-import {
-  filterCategory,
-  loadCategories,
-} from '../../store/actions/index.js';
 
-const FilterCategory = () => {
-  const dispatch = useDispatch();
+const FilterCategory = ({ setCategory }) => {
+
   const categories = useSelector((state) => state.categories);
-  let [category, setCategory] = useState([]);
-  if (categories.length === 0) {
-    dispatch(loadCategories());
-  }
-  
-  const selectHandle = (e) => {
-      e.preventDefault();
-    if(e.target.value === "All"){
-      dispatch(filterCategory(e.target.value))
-      setCategory([])
-    }else {
-    let categ = category.find((c) => c === e.target.value)
-    if(!categ){
-      setCategory([...category, e.target.value])
-    }
-  }
-  }
-  
-  const deleteHandle = (e) => {
-    e.preventDefault();
-    setCategory(category.filter((c) => c !== e.target.value))
-  }
-  const handleClick = (e) => {
-    e.preventDefault();
-    dispatch(filterCategory(category));
 
-    setCategory([])
-  };
+  const handleChange = (e) => {
+    e.preventDefault();
+    const category = e.target.value;
+    setCategory(category)
+  }
 
   return (
     <div>
       <div className={styles.contenedor_category}>  
-      <form onSubmit={handleClick}>
-      <label htmlFor="categories">Filter by categories</label>
+      <label htmlFor="categories">Filter by categories: </label>
       <select 
       id="categories"
-      onChange={selectHandle}
+      onChange={handleChange}
       >
       <option value="All" >All</option>
       {categories.map((c, i) => (
         <option value={c} name="categories" key={i}>{c}</option>
         )
         )}
-      </select>      
-         <button type="submit">Filter</button> 
-        </form> 
-        <div>
-        {category.map((c, i) => (
-          <div id={c} key={i}>
-          {c}
-          <button type="button" value={c} onClick={(e) => deleteHandle(e)}>X</button>
-          </div>
-          ))}
-        </div> 
+      </select>       
      </div>      
     </div>
   );
 };
+
 export default FilterCategory;

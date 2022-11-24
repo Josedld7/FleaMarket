@@ -35,28 +35,25 @@ const style = {
 
 
 export default function Review(){ //por props recibe el nombre del producto para filtrar y mostrar solo ese review
-
-  const stars = Array(5).fill(0); //para 
   
-
   const dispatch = useDispatch();
-  const reviews = useSelector(state => state.reviews);
 
-  let i = 0
-  // const reviewStar = reviews[i].star
-  // console.log(reviews)
-  // const starRev = Array(reviewStar).fill(0);
-  // console.log(reviewStar)
+  useEffect(() => {
+    dispatch(getReview());
+  },[dispatch])
   
+  const stars = Array(5).fill(0); 
+  const reviews = useSelector(state => state.reviews);
+  console.log(reviews)
+  
+  
+
   
   
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const [input, setInput] = useState('');
 
-  useEffect(() => {
-    dispatch(getReview());
-  },[dispatch])
 
 
   const handleClick = value => {
@@ -84,7 +81,7 @@ export default function Review(){ //por props recibe el nombre del producto para
   }
 
   return(
-    <div style={style.container}>
+    <div className="container_all" style={style.container}>
       <h2>Rating Star</h2>
       <p>Rating stars: {currentValue}</p>
       <div style={style.stars}>
@@ -118,22 +115,15 @@ export default function Review(){ //por props recibe el nombre del producto para
           reviews.map(e => {
             return (
               <div key={e._id}>
-                <div>
-                  {/* {
-                    starRev.map(index => {
-                      return(
-                        <FaStar
-                          key={index}
-                          size={10}
-                          style={{
-                            marginRight: 10,
-                          }}
-                          color={colors.orange}
-                        />
-                      )
-                    })
-                  } */}
-                </div>
+                <p>{e.star} stars</p>
+                <FaStar
+                  key={e}
+                  size={10}
+                  style={{
+                    marginRight: 10,
+                  }}
+                  color={colors.orange}
+                />
                 <p>{e.comment}</p>
                 <hr />
               </div>
@@ -144,3 +134,14 @@ export default function Review(){ //por props recibe el nombre del producto para
     </div>
   )
 }
+
+
+{/* <p>{e.star} stars</p>
+<FaStar
+  key={e}
+  size={10}
+  style={{
+    marginRight: 10,
+  }}
+  color={colors.orange}
+/> */}
