@@ -1,46 +1,47 @@
-import { Link } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar.jsx";
-import FiltUsed from "../FilterUsed/FilterUsed.jsx";
-import FilterCategory from "../FilterCategory/FiltCat.jsx";
-import Sort from "../Sort/Sort.jsx";
-import styles from "./Header.module.css";
-import fm from "../../assets/fm.png";
-import car from "../../assets/carrito.png";
-import { useAuth0 } from "@auth0/auth0-react";
-import LinkAuth0 from "./auth0/LinkAuth0.jsx";
-import LinkJwt from "./jwt/LinkJwt.jsx";
+import { Link } from 'react-router-dom'
+import SearchBar from '../SearchBar/SearchBar.jsx'
+import FiltUsed from '../FilterUsed/FilterUsed.jsx'
+import FilterCategory from '../FilterCategory/FiltCat.jsx'
+import Sort from '../Sort/Sort.jsx'
+import styles from './Header.module.css'
+import fm from '../../assets/fm.png'
+import car from '../../assets/carrito3.png'
+import { useAuth0 } from '@auth0/auth0-react'
+import LinkAuth0 from './auth0/LinkAuth0.jsx'
+import LinkJwt from './jwt/LinkJwt.jsx'
 
 const Header = () => {
-  const { user } = useAuth0();
+  const { user } = useAuth0()
 
   return (
     <header className={styles.container}>
-      <section className={styles.container_position}>
-        <div className={styles.section_navbar}>
-          <div className={styles.container_logo_and_title}>
-            <div>
-              <Link to="/">
-                <img className={styles.logo} src={fm} />
-              </Link>
-            </div>
-            <div>
-              <h1 className={styles.title}> FleaMarket </h1>
-            </div>
-          </div>
+      <section className={styles.container_position_select_principal}>
 
+        <div className={styles.container_logo_and_title}>
           <div>
-            <SearchBar />
-          </div>
-
-          <div>
-            <Link to="/shoping">
-              <img className={styles.shoping_car} src={car} />{" "}
+            <Link to="/">
+              <img className={styles.logo_flemarket} src={fm} />
             </Link>
           </div>
-          {user ? <LinkAuth0 /> : <LinkJwt />}
-
-          <div className={styles.container_links}></div>
+          <div>
+            <a className={styles.title_flemarket}> FleaMarket </a>
+          </div>
         </div>
+
+        <div>
+          <a  className={styles.search_bar}><SearchBar /></a>
+        </div>
+
+        <div>
+          <Link to="/shoping">
+            <img className={styles.shoping_car} src={car} />{' '}
+          </Link>
+        </div>
+
+        <div className={styles.container_register_login}>
+          {user ? <LinkAuth0 /> : <LinkJwt />}
+        </div>
+
       </section>
 
       <section className={styles.section_filters}>
@@ -57,7 +58,7 @@ const Header = () => {
         </div>
       </section>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

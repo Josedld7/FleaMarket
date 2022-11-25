@@ -17,7 +17,7 @@ const FiltUsed = () => {
 
   return (
     <div>
-      <label htmlFor="condition">Filter by condition: </label>
+      <label className={styles.labels} htmlFor="condition">Condition  </label>
       <select
         className={styles.contenedor_select_condition}
         onChange={handleCondition}

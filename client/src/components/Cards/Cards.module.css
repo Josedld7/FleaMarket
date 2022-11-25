@@ -1,15 +1,6 @@
 .contenedor_cards{ 
     display: flex;  
     flex-wrap: wrap;
-    justify-content: space-around; 
-    margin: 50px;
-    width: 80%;
-    
+    justify-content: space-around;  
 }
-.contenedor_cardscero{
-    display: flex;  
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(243, 243, 243);
-}
+ 

@@ -1,5 +1,5 @@
 .icon_car {
-  background: linear-gradient(to right, #f9d423, #e65c00);
+  border-radius: 10px;
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.25rem;

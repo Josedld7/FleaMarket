@@ -1,30 +1,64 @@
-.contenedor_button_category{
-    align-items: center;
-    align-content: center;
-    width: 70px;
-    
+.contenedor_button_category {
+  align-items: center;
+  align-content: center;
+  width: 70px;
 }
 
-.contenedor_button_all { 
-    text-align: center;
-    border-color: transparent;
-    border-radius: 5px;  
-    background-color: transparent;
-    color: aliceblue;
-  }
-  .contenedor_button_all:hover {
-    background-color: var( --bg-hover-register-login);
-  }
+.button_category {
+  text-align: center;
+  border-color: transparent;
+  background-color: transparent;
+  color: aliceblue;
+}
+.button_category:hover {
+  border-radius: var(--inputs-border-radius-general);
+  background-color: var(--bg-hover-register-login);
+}
 
-   .contenedor_button_category {   
-    width: 60px; 
-    text-align: center;
-    border-color: transparent;
-    border-radius: 5px;  
-    background-color: transparent;
-    color: aliceblue;
-  }
-  .contenedor_button_categoryl:hover {
-    background-color: var( --bg-hover-register-login);
-  } 
-
+.contenedor_button_category {
+  width: 60px;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.contenedor_button_categoryl:hover {
+  background-color: var(--bg-hover-register-login);
+}
+.button_filter {
+  margin-left: 0.5rem;
+  border: transparent;
+  border-radius: var(--inputs-border-radius-general);
+  background-color: transparent;
+  color: var(--font-one);
+}
+.button_filter:hover {
+  color: var(--header-bg-color);
+}
+.button_x {
+  margin-left: 0.5rem;
+  border: var(--border-general);
+  border-radius: var(--inputs-border-radius-general);
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--font-one);
+}
+.button_x :hover {
+  color: #fff;
+}
+.select_delete_category {
+  font-weight: bold;
+  margin-left: var(--header-margin-right-left);
+}
+.selects {
+  border-color: transparent;
+  border-radius: var(--inputs-border-radius-general);
+  height: var(--inputs-max-height);
+  width: var(--selects-max-width);
+  background-color: var(--inputs-selects-color);
+}
+.labels {
+  margin-left: var(--header-margin-right-left);
+  margin-right: 1rem;
+  color: #fff;
+}

@@ -1,67 +1,61 @@
+@import '../../index.css';
+
 /* SECCION DEL NAVBAR: LOGO, TITULO, CAR, REGISTER, LOGIN, LOGOUT Y PROFILE */
 .container {
   background: linear-gradient(to right, #243b55, #141e30);
-}
-
-.container_position {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.section_navbar {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  aling-items: center;
+  align-items: center;
+  align-content: center;
 }
 
-.container_logo_and_title{
+.container_position_select_principal {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin:1rem;
 }
 
-.logo {
-  padding-top:20px;
+/*LOGO AND TITLE FLEA MARKET*/
+.container_logo_and_title {
+  display: flex;
+  flex-direction: row;
+  margin-left: var(--header-margin-right-left);
+  margin-right: var(--header-margin-right-left);
+}
+.logo_flemarket {
   width: 2.5rem;
   height: 2.5rem;
 }
-
-.title {
+.title_flemarket {
+  margin-top: var(--header-margin-top-bottom);
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--font-one);
 }
+ 
 
+/* SHOPPING CAR*/
 .shoping_car {
-  background: linear-gradient(to right, #f9d423, #e65c00);
-  border-radius: 5px;
-  width: 1.3rem;
-  height: 1.3rem;
-  padding: 0.25rem;
-  margin-top:23px
-}
-
-.container_links {
-  display: flex;
-  align-items: center;
-}
-
-.header_btns:hover {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--bg-hover-register-login);
+  margin: var(--header-margin-top-bottom);
+  margin-left: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 /* SECCCION DE FILTROS Y ORDENAMIENTOS */
 .section_filters {
+  width: 100%;
   background: #757f9a;
 }
 
 .sections_position {
-  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: var(--header-margin-top-bottom);
 }

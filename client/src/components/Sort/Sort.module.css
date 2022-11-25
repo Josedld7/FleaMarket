@@ -1,0 +1,15 @@
+@import '../../index.css';
+
+.selects {
+ 
+  margin-right: var(--header-margin-right-left);
+  border-radius: 5px;
+  border-color:transparent;
+  height: var(--inputs-max-height);
+  width: var(--selects-max-width);
+  background-color: var(--inputs-selects-color);
+}
+.labels {
+  margin-left: var(--header-margin-right-left);
+  color: #fff; 
+}

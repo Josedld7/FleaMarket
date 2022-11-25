@@ -1,5 +1,8 @@
 
 body {
+ 
+  
+ 
   margin: 0;
   font-family: 'Assistant', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,12 +23,14 @@ code {
   --gray-one: rgb(245, 247, 248); 
  --blue-light-birder:rgb(230, 240, 250);
  --bg-hover-register-login:rgba(198, 198, 202, 0.2);
-
+ 
+ --header-margin-top-bottom: 0.6rem;
+ --header-margin-right-left: 2rem;
  --header-bg-color: linear-gradient(to right, #243b55, #141e30);
  --header-car-button-bg-color: linear-gradient(to right, #f9d423, #e65c00);
  --header-button-bg-color: transparent;
  --header-button-bg-color-hover:rgba(198, 198, 202, 0.2);
-
+ --header-icons-width-heigth:2rem;
  --main-max-width: 1300px;
  --main-max-heigth: auto;
  --main-size-font: 12px;
@@ -35,13 +40,18 @@ code {
 
  --border-general: 1px solid;
  --border-radius-general: 5px;
- --border-color: rgb(240, 240, 240);
+ --border-radius-general-buttons: 10px;
+ --border-color: rgb(240, 240, 240,0.2);
 
  --inputs-border-general: 1px solid;
  --inputs-border-radius-general: 5px;
  --inputs-color:rgb(230, 240, 250, 0,2);
- --inputs-max-width: 400px;
- --inputs-max-height: 25px;
+ --inputs-selects-color: rgba(215, 218, 244, 0.3);
+ --inputs-max-width: 20rem;
+ --inputs-max-height: 1.2rem;
+
+
+ --selects-max-width: 8rem;
 
  --form-inputs-border-general: 1px solid;
  --form-inputs-border-radius-general: 5px;
