@@ -1,30 +1,31 @@
-.contenedor_button_category{
-    align-items: center;
-    align-content: center;
-    width: 70px;
-    
+@import '../../index.css';
+.contenedor_button_category {
+  align-items: center;
+  align-content: center;
+  width: 70px;
 }
 
-.contenedor_button_all { 
-    text-align: center;
-    border-color: transparent;
-    border-radius: 5px;  
-    background-color: transparent;
-    color: aliceblue;
-  }
-  .contenedor_button_all:hover {
-    background-color: var( --bg-hover-register-login);
-  }
+.contenedor_button_category {
+  width: 60px;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.contenedor_button_categoryl:hover {
+  background-color: var(--inputs-selects-color);
+}
 
-   .contenedor_button_category {   
-    width: 60px; 
-    text-align: center;
-    border-color: transparent;
-    border-radius: 5px;  
-    background-color: transparent;
-    color: aliceblue;
-  }
-  .contenedor_button_categoryl:hover {
-    background-color: var( --bg-hover-register-login);
-  } 
-
+.selects {
+  color: var(--selects-font-color);
+  border-color: transparent;
+  border-radius: var(--selects-border-radius-general-buttons);
+  height: var(--inputs-max-height);
+  width: var(--selects-max-width);
+  background-color: var(--inputs-selects-color);
+}
+.labels {
+  margin-left: var(--header-margin-right-left);
+  margin-right: 1rem;
+  color: #fff;
+}

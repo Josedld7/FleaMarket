@@ -1,0 +1,41 @@
+
+
+.block__shopingcontendortres{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+}
+.block__shopingcontendorcuatro{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    margin-bottom: 10px;
+
+}
+.block__shopingcontendorcuatro img{
+    margin-right: 70px;
+
+}
+.block__shopingcontendorcinco{
+
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.block__shopingcontendorcinco button{
+    width: 20%;
+    height: 30px;
+    color: rgb(85, 79, 79);
+    background-color: rgb(224, 224, 224);
+    font-size: 0.8rem;
+    outline: none;
+}
+.block__shopingprecio{
+    font-size: 2.2rem;
+}

@@ -91,4 +91,24 @@ export const Validation = (input) =>{
   return error;
 }; 
 
+export const validateLogin = (data) =>{
+  let errors = {};
+  let RegExInputUsersressionUrl =
+    /^httInputUserss?:\/\/(?:www.)?[-a-zA-Z0-9@:%.+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%+.~#?&/=]*)$/;
+  let RegExInputUsersressionText = /^[a-zA-Z\s]*$/;
+  let RegExInputUsersressionNum = /^[0-9,$]*$/;
+  let RegExInputUsersressionEmail =
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ 
 
+   //*EMAIL 
+  if (!RegExInputUsersressionEmail.test(data.email)) errors.email = "Correctly add Email must include @ and .com...";
+  if (!data.email) errors.email = "Email is required";
+ 
+
+    //*PASSWORD 
+    if (!data.password) errors.password = "Password is required";
+    if (data.password.length < 5) errors.password = "The pasword must have more than five character"; 
+    
+    return errors;
+}; 

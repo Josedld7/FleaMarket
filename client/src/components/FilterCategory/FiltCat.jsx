@@ -15,8 +15,8 @@ const FilterCategory = ({ setCategory }) => {
   return (
     <div>
       <div className={styles.contenedor_category}>  
-      <label htmlFor="categories">Filter by categories: </label>
-      <select 
+      <label className={styles.labels} htmlFor="categories">Categories </label>
+      <select className={styles.selects}
       id="categories"
       onChange={handleChange}
       >

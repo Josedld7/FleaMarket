@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Card.module.css'
-import car from '../../assets/carrito.png'
+import car from '../../assets/carrito2.png'
 const Card = (props) => {
 
 

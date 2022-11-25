@@ -9,27 +9,17 @@ const colors = {
   grey: "#a9a9a9"
 };
 
+const imgLink = 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png';
 const style = {
-  container: {
-    display: "flex",
-    flexDirection: "clumn",
-    alignItems: "center",
-  },
-  textarea:{
-    botder: "px solid #a9a9a9",
-    borderRadius: 5,
-    width: 300,
-    margin: "20px 0",
-    minHeight: 100,
-    padding: 10
-  },
-  button:{
-    botder: "px solid #a9a9a9",
-    borderRadius: 5,
-    width: 300,
-    padding: 10
-  }
-
+  // textarea:{
+  //   botder: "px solid #a9a9a9",
+  //   borderRadius: 5,
+  //   width: 300,
+  //   margin: "20px 0",
+  //   minHeight: 100,
+  //   padding: 10
+  // },
+  
 }
 
 
@@ -81,55 +71,61 @@ export default function Review(){ //por props recibe el nombre del producto para
   }
 
   return(
-    <div className="container_all" style={style.container}>
-      <h2>Rating Star</h2>
-      <p>Rating stars: {currentValue}</p>
-      <div style={style.stars}>
-        {stars.map((_, index) =>{
-          return(
-            <FaStar 
+    <div className="container_all" >
+      <div className="container_content">
+        <p>Rating stars: {currentValue}</p>
+        <div style={style.stars}>
+          {stars.map((_, index) =>{
+            return(
+              <FaStar 
               key={index}
-              size={24}
-              style={{
-                marginRight: 10,
-                cursor: "pointer",
-              }}
-              color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
-              onClick={() => handleClick(index + 1)}
-              onMouseOver={() => handleMouseOver(index + 1)}
-              onMouseLeave={handleMouseLeave}
-            />
-          )
-        })}
-      </div>
-      <textarea onChange={(e)=> handleCambio(e)}
-        placeholder="whats your feedback"
-        style={style.textarea}
-        value={input}
-        
-      />
-      <button style={style.button} onClick={handleSubmit}>Submit</button>
-      <hr />
-      <div className="container_review">
-        {
-          reviews.map(e => {
-            return (
-              <div key={e._id}>
-                <p>{e.star} stars</p>
-                <FaStar
-                  key={e}
-                  size={10}
-                  style={{
-                    marginRight: 10,
-                  }}
-                  color={colors.orange}
-                />
-                <p>{e.comment}</p>
-                <hr />
-              </div>
-            )
-          })
-        }
+                size={24}
+                style={{
+                  marginRight: 10,
+                  cursor: "pointer",
+                }}
+                color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
+                onClick={() => handleClick(index + 1)}
+                onMouseOver={() => handleMouseOver(index + 1)}
+                onMouseLeave={handleMouseLeave}
+              />
+              )
+            })}
+        </div>
+        <input onChange={(e)=> handleCambio(e)}
+          placeholder="whats your feedback"
+          
+          className="text_box"
+          value={input} 
+        />
+        <button className="button_submit" onClick={handleSubmit}>Submit</button>
+        <hr />
+        <div className="container_review">
+          {
+            reviews.map(e => {
+              return (
+                <div key={e._id}>
+                  <div className="container_image">
+                    <img className="image_user" src={imgLink} alt="image user"/>
+
+                  </div>
+                  <FaStar
+                    key={e}
+                    size={10}
+                    style={{
+                      marginRight: 10,
+                      display: "inline-block"
+                    }}
+                    color={colors.orange}
+                    />
+                  <p className="star_user">{e.star} stars</p>
+                  <p className="comentario">{e.comment}</p>
+                  <hr />
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     </div>
   )

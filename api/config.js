@@ -11,3 +11,5 @@ export const SECRET = process.env.SECRET || 'fleaMarketapp';
 
 export const EMAIL =  process.env.EMAIL || 'fleamarket.appservices@gmail.com'
 export const PASS = process.env.PASS || 'lszexysgdylynalk'
+
+export const FRONT_DOMINIO = process.env.FRONT_DOMINIO || "http://localhost:3000"

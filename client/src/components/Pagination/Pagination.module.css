@@ -1,10 +1,15 @@
+@import "../../index.css";
+
 .container{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	margin-top: var(--header-margin-top-bottom)
 }
 
 .page_btn {
+	
+	color: var(--main-font-color-naranja);
 	outline: none;
 	border: none;
 	font-size: 14px;
@@ -19,10 +24,11 @@
 	margin: 0 5px;
 	box-shadow: var(--box-shadow);
 	cursor: pointer;
-	background-color: white;
+	background-color:var(--inputs-selects-color);
+	 
 }
 
 .active {
-	background-color: var(--blue);
-	color: white;
+	background-color:var(--pagination-bg-color);
+	color: rgb(255, 166, 0);
 }

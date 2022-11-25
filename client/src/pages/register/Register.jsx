@@ -4,6 +4,7 @@ import axios from "axios";
 import { validate } from "../../Helpers/Validations.js";
 import { Link, useHistory } from "react-router-dom";
 import HeadPage from "../../components/HeadPage/HeadPage";
+import { BACK_DOMINIO } from "../../config.js";
 
 const Register = () => {
   const [data, setData] = useState({
@@ -34,7 +35,7 @@ const Register = () => {
    }
    else{
     try {
-      const url = "http://localhost:3001/api/register";
+      const url = `${BACK_DOMINIO}/api/register`;
       await axios.post(url, data);
       history.push("/login");
       setErrors(validate(data));

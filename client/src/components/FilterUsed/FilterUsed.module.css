@@ -1,11 +1,20 @@
+@import "../../index.css";
 .contenedor_select_condition {
   width: 100px;
   margin-bottom: 0.2rem;
-  margin-top: 0.2rem;
-  border-radius: 5px;
+  
+  border-radius: 10px;
   background-color: rgb(255, 255, 255);
-  color: rgb(68, 52, 125);
+  color: var(--selects-font-color);
   border: 1px solid;
   border-color: transparent;
-  border-radius: 4px;
+  border-radius: var(--selects-border-radius-general-buttons);
+  height: var( --inputs-max-height);
+  width: var(--selects-max-width) ; 
+  background-color: var(--inputs-selects-color);
+}
+.labels {
+  margin-left: var(--header-margin-right-left);
+  margin-right: 1rem ;
+  color: #fff; 
 }

@@ -1,0 +1,15 @@
+@import '../../index.css';
+
+.selects {
+ color: var(--selects-font-color);
+  margin-right: var(--header-margin-right-left);
+  border-radius: var(--selects-border-radius-general-buttons);
+  border-color:transparent;
+  height: var(--inputs-max-height);
+  width: var(--selects-max-width);
+  background-color: var(--inputs-selects-color);
+}
+.labels {
+  margin-left: var(--header-margin-right-left);
+  color: #fff; 
+}

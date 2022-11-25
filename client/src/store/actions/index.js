@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { BACK_DOMINIO } from "../../config.js";
 
-const host = "http://localhost:3001";
+const host = BACK_DOMINIO;
 
 export function loadProducts(sort, category, name, condition, page){
   return async function(dispatch){
@@ -45,7 +46,7 @@ export function loadCategories() {
 export const postFormPay = (payload) => {
   return async function () {
     try {
-      const json = await axios.post('http://localhost:3001/api/payment', payload);
+      const json = await axios.post(`${host}/api/payment`, payload);
       return json
     } catch (e) {
       console.log(e);
@@ -56,7 +57,7 @@ export const postFormPay = (payload) => {
 export const postReviews = (payload) => {
   return async function () {
     try {
-      const json = await axios.post('http://localhost:3001/api/review',payload);
+      const json = await axios.post(`${host}/api/review`,payload);
       return json
     } catch (e) {
       console.log(e);
@@ -67,7 +68,7 @@ export const postReviews = (payload) => {
 export const getReview = () => {
   return async function(dispatch){
     try {
-      const json = await axios.get('http://localhost:3001/api/review');
+      const json = await axios.get(`${host}/api/review`);
       return dispatch({type:"GET_REVIEW", payload: json.data});
     } catch (e) {
       console.log(e);
@@ -80,15 +81,6 @@ export function shopingCar(opt, data) {
     dispatch({
       type: opt,
       payload: data
-    })
-  }
-};
-
-export function subTotal(opt, value) {
-  return function (dispatch) {
-    dispatch({
-      type: opt,
-      payload: value
     })
   }
 };

@@ -20,12 +20,14 @@ code {
   --gray-one: rgb(245, 247, 248); 
  --blue-light-birder:rgb(230, 240, 250);
  --bg-hover-register-login:rgba(198, 198, 202, 0.2);
-
+ 
+ --header-margin-top-bottom: 0.6rem;
+ --header-margin-right-left: 2rem;
  --header-bg-color: linear-gradient(to right, #243b55, #141e30);
  --header-car-button-bg-color: linear-gradient(to right, #f9d423, #e65c00);
  --header-button-bg-color: transparent;
  --header-button-bg-color-hover:rgba(198, 198, 202, 0.2);
-
+ --header-icons-width-heigth:2rem;
  --main-max-width: 1300px;
  --main-max-heigth: auto;
  --main-size-font: 12px;
@@ -33,16 +35,26 @@ code {
  --main-font-color-general: #ffffff ;
  --main-font-color-naranja: rgb(228, 148, 0);
 
+ --boder-color: rgb(228, 148, 0);
  --border-general: 1px solid;
  --border-radius-general: 5px;
- --border-color: rgb(240, 240, 240);
+ --border-radius-general-buttons: 10px;
+ --border-color: rgb(240, 240, 240,0.2);
 
+ --pagination-bg-color: rgb(223, 223, 227);
+
+ --inputs-boder-color: rgba(228, 148, 0, 0.59);
  --inputs-border-general: 1px solid;
  --inputs-border-radius-general: 5px;
  --inputs-color:rgb(230, 240, 250, 0,2);
- --inputs-max-width: 400px;
- --inputs-max-height: 25px;
+ --inputs-selects-color:  rgb(129, 148, 179);;
+ --inputs-max-width: 22rem;
+ --inputs-max-height: 1.3rem;
 
+ --selects-font-color: rgb(230, 230, 230);
+ --selects-max-width: 8rem;
+ --selects-border-radius-general-buttons: 10px;
+ 
  --form-inputs-border-general: 1px solid;
  --form-inputs-border-radius-general: 5px;
  --form-button-border-general: 1px solid;

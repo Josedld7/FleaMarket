@@ -1,10 +1,40 @@
 .header_btns {
-    margin-top: 22.5px;
-    height: 30px;
-    width: 65px;
-    text-align: center;
-    border-color: transparent;
-    border-radius: 5px;
-    background-color: transparent;
-    color: aliceblue;
-  }
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  color: aliceblue;
+}
+.logo_profile {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.logo_profile:hover {
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.logo_register {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.logo_register:hover {
+  border-radius: 50px;
+  background-color: #ffff;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.logo_login {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.logo_login:hover {
+  border-radius: 50px;
+  background-color: #ffff;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+

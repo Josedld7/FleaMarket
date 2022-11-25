@@ -1,16 +1,85 @@
+/* .container_all{
+  
+} */
 
+.container_content{
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  width: 90%;
+  max-width: 900px;
+  padding: 4em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+  text-align: center;
+  
+  
+}
 
 .container_review{
   background-color: white;
   border: 2.5px solid #b0c4de;
-  color: navy;
+  color: black;
   font-family: "calibri";
   font-size: 18px; 
-  height: 100px;
+  height: 300px;
+  width: 60%;
   margin: 0px 75px 0px 75px;
   overflow-y: scroll;
   padding: 10px;
   text-align: left;
-
   
 }
+
+.star_user{
+  display: inline-block;
+  
+}
+
+.button_submit{
+  border: solid #292727;
+  border-radius: 0px 10px 10px 0;
+  background-color: #ffffff;
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+}
+
+.button_submit:hover{
+  background-color: #314357;
+  color: #ffffff;
+  transition: 0.4s;
+  border: none;
+}
+
+.text_box{
+  width: 50%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: .6em .3em;
+}
+
+.container_image{
+  background-color:transparent;
+  max-width: 50%;
+  min-width: 50%;
+  margin-bottom: -20px;
+}
+
+.image_user{
+  width: 15%;
+  min-width: 50px;
+  display: inline-block;
+}
+
+.comentario{
+  display: block;
+  margin: 1px;
+  padding-left:5px ;
+}
+
+/* .text_box::placeholder{ 
+  position: absolute;
+} */
