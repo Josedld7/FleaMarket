@@ -1,0 +1,14 @@
+.form{
+    
+    
+}
+
+.container_input{
+    display:flex;
+    flex-direction:colum;
+   
+}
+
+.input{
+    width:200px;
+}

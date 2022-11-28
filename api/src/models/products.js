@@ -56,7 +56,8 @@ const productschema = new mongoose.Schema(
       type: Number
     },
     bluetooth: {
-      type: Boolean
+      type: String,
+      enum: ["Si", "No"],
     }
   }
 );

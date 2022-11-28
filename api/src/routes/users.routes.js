@@ -10,8 +10,10 @@ import {verifyAdminRole, verifyToken}  from "../middleware/auth.middlewares.js";
 
 const router = express();
 
+//[verifyToken, verifyAdminRole]
+
 // route que me trae todo los usuarios
-router.get("/users",  [verifyToken, verifyAdminRole], getUsers);
+router.get("/users",  getUsers);
 
 // route que me actualiza los datos de usuarios
 router.put("/user/:id", verifyToken, updateUser);

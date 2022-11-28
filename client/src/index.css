@@ -5,8 +5,8 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
@@ -69,3 +69,16 @@ code {
  --form-button-max-height: 3rem;
  --form-button-max-width: 10rem;
 }
+
+
+/* .rdt_TableCol{
+  background-color: #e65c00;
+  font-weight: bold;
+  color:white;
+}
+
+.rdt_TableCell{
+  background-color: #243b55;
+  color:white;
+} */
+

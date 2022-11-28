@@ -5,8 +5,6 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
   const [userStorage, setUserStorage] = useState(null);
 
-  console.log(window)
-
   useEffect(() => {
     const userLocalStorageJSON = window.localStorage.getItem("user");
     const user = JSON.parse(userLocalStorageJSON);

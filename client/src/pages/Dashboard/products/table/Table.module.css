@@ -1,0 +1,15 @@
+.btn_delete{
+    background:red;
+    border: none;
+    color:white;
+    cursor:pointer;
+    border-radius:3px;
+}
+
+.btn_update{
+    background:green;
+    border: none;
+    color:white;
+    cursor:pointer;
+    border-radius:3px;
+}

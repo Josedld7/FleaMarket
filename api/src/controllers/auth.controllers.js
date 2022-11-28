@@ -3,7 +3,7 @@ import Jwt from "jsonwebtoken";
 import Role from "../models/roles.js";
 import Users from "../models/users.js";
 import { SECRET } from "../../config.js";
-import { send_Mail } from "../nodemailer/mail.js"
+import { send_Mail } from "../nodemailer/mail.js";
 
 // registro de usuario, se comprueba email y password
 export const userRegister = async (req, res) => {
@@ -33,8 +33,6 @@ export const userRegister = async (req, res) => {
       telephone,
     });
 
-
-
     if (roles) {
       //si llega roles busca en el model de Roles el que coincida y asigna al usuario el id de ese role
       const findRole = await Role.find({ name: { $in: roles } });
@@ -46,11 +44,10 @@ export const userRegister = async (req, res) => {
 
     const savedUser = await newUser.save(); // guarda el nuevo usuario con el respectivo role
 
+    await send_Mail(email, "registro", firstname, lastname);
 
-    await send_Mail(email, "registro", firstname, lastname)
-
-    const token = Jwt.sign({ id: savedUser._id }, SECRET, { //encripta el token de acuerdo al id q tiene el usuario
-
+    const token = Jwt.sign({ id: savedUser._id }, SECRET, {
+      //encripta el token de acuerdo al id q tiene el usuario
       expiresIn: 86400, // 24 hours
     });
 
@@ -89,17 +86,18 @@ export const userLogin = async (req, res) => {
       expiresIn: 96400, // 24 hours
     });
 
-    res.json({ 
+    res.json({
       token,
       id: findUser._id,
-      name:findUser.firstname,
+      name: findUser.firstname,
       username: findUser.username,
       email: findUser.email,
       country: findUser.country,
       city: findUser.city,
-      role: findUser.roles?findUser.roles.map(r=>r.name).toString():'user'
+      role: findUser.roles
+        ? findUser.roles.map((r) => r.name).toString()
+        : "user",
     });
-
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
