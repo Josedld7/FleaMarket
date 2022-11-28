@@ -47,29 +47,36 @@ code {
  --inputs-border-general: 1px solid;
  --inputs-border-radius-general: 5px;
  --inputs-color:rgb(230, 240, 250, 0,2);
- --inputs-selects-color:  rgb(129, 148, 179);;
+ --inputs-selects-color:  rgb(129, 148, 179);
  --inputs-max-width: 22rem;
- --inputs-max-height: 1.3rem;
+ --inputs-max-height: 1.4rem;
 
  --selects-font-color: rgb(230, 230, 230);
- --selects-max-width: 8rem;
+ --selects-max-width: 7rem;
  --selects-border-radius-general-buttons: 10px;
  
+ --form-border-radius-general: 10px;
  --form-inputs-border-general: 1px solid;
+ --form-inputs-border-color: rgb(193, 213, 241);
  --form-inputs-border-radius-general: 5px;
- --form-button-border-general: 1px solid;
- --form-button-border-radius-general: 5px;
+ --form-inputs-width: 18rem;
+ --form-inputs-height: 2rem;
  --form-input-font-size: 0.7rem;
- --forms-max-font-size-welcome-login:2rem;
- --forms-max-font-size-title:2rem;
- --forms-max-font-size:1.2rem;
- --forms-max-font-size-errors: 0.5rem;
+ --forms-input-margin: 0.4rem 0rem 0rem 0rem; 
+ --forms-max-font-size-welcome-login:2rem; 
  --form-header-font-color-general: #ffffff ;
+ --form-inputs-bg-color:rgb(229, 239, 253);
  --form-header-bg-color: linear-gradient(to right, #243b55, #141e30);
  --form-button-max-height: 3rem;
  --form-button-max-width: 10rem;
-}
 
+ --form-button-border-general: 1px solid;
+ --form-button-border-radius-general: 50px;
+ 
+ 
+ --forms-errors-max-font-size: 0.7rem;
+ --forms-errors-color:rgba(8, 82, 255, 0.667);
+}
 
 /* .rdt_TableCol{
   background-color: #e65c00;

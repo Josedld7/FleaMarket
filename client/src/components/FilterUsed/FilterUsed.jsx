@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from 'react';
+import ProductsContext from "../../context/products/productsContext.js";
 import styles from "./FilterUsed.module.css";
 
-const FiltUsed = ({ setCondition }) => {
+const FiltUsed = () => {
+
+  const { setCondition } = useContext(ProductsContext);
 
   const handleCondition = (e) => {
     e.preventDefault();
-    if (e.target.value !== "All") {
-      const condition = e.target.value;
-      setCondition(condition)
-    }
+    const condition = e.target.value;
+    setCondition(condition)
   };
 
   return (

@@ -3,33 +3,15 @@ import SearchBar from '../SearchBar/SearchBar.jsx'
 import FiltUsed from '../FilterUsed/FilterUsed.jsx'
 import FilterCategory from '../FilterCategory/FiltCat.jsx'
 import Sort from '../Sort/Sort.jsx'
-import Pagination from '../Pagination/Pagination.jsx'
 import styles from './Header.module.css'
 import fm from '../../assets/fm.png'
 import car from '../../assets/carrito3.png'
 import { useAuth0 } from '@auth0/auth0-react'
 import LinkAuth0 from './auth0/LinkAuth0.jsx'
 import LinkJwt from './jwt/LinkJwt.jsx'
-import { useEffect, useState } from 'react'
-import { loadProducts, loadCategories } from '../../store/actions/index.js'
-import { useDispatch, useSelector } from 'react-redux'
 
 const Header = () => {
   const { user } = useAuth0()
-
-  const [sort, setSort] = useState('')
-  const [category, setCategory] = useState('All')
-  const [name, setName] = useState('')
-  const [condition, setCondition] = useState('')
-  const [page, setPage] = useState(1)
-
-  const products = useSelector((state) => state.products)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(loadProducts(sort, category, name, condition, page))
-    dispatch(loadCategories())
-  }, [sort, condition, category, name, page])
 
   return (
     <header className={styles.container}>
@@ -48,7 +30,7 @@ const Header = () => {
         </div>
 
         <div>
-          <a className={styles.search_bar}><SearchBar setName={(name) => setName(name)} /></a>
+          <a className={styles.search_bar}><SearchBar /></a>
         </div>
 
         <div>
@@ -66,24 +48,14 @@ const Header = () => {
       <section className={styles.section_filters}>
         <div className={styles.sections_position}>
           <div>
-            <FilterCategory setCategory={(category) => setCategory(category)} />
+            <FilterCategory />
           </div>
           <div>
-            <FiltUsed setCondition={(condition) => setCondition(condition)} />
+            <FiltUsed />
           </div>
           <div>
-            <Sort setSort={(sort) => setSort(sort)} />
+            <Sort />
           </div>
-        </div>
-      </section>
-      <section className={styles.pagination}>
-        <div >
-          <Pagination 
-            page={page}
-            setPage={(page) => setPage(page)}
-            total={products.total ? products.total : 0}
-            limites={products.limit ? products.limit : 0}
-          />
         </div>
       </section>
     </header>

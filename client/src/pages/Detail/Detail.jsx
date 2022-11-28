@@ -46,7 +46,7 @@ export function Detail() {
           <div className={styles.block__detail_estrellas}>
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-yellow-400"
+              className="w-5 h-5 text-yellow-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export function Detail() {
             </svg>
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-yellow-400"
+              className="w-5 h-5 text-yellow-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export function Detail() {
             </svg>
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-yellow-400"
+              className="w-5 h-5 text-yellow-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export function Detail() {
             </svg>
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-yellow-400"
+              className="w-5 h-5 text-yellow-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export function Detail() {
             </svg>
             <svg
               aria-hidden="true"
-              class="w-5 h-5 text-gray-300 dark:text-gray-500"
+              className="w-5 h-5 text-gray-300 dark:text-gray-500"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

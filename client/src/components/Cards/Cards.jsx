@@ -1,12 +1,17 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Card from './Card.jsx'
 import styles from './Cards.module.css'
 import { loadProduct } from '../../store/actions/index.js'
-import { useEffect} from 'react'
+import { useEffect, useContext } from 'react'
+import ProductsContext from "../../context/products/productsContext.js";
 
 const Cards = () => {
+
+  const { products, error } = useContext(ProductsContext);
+
+  console.log(error)
+  
   const dispatch = useDispatch()
-  const products = useSelector((state) => state.products)
 
   useEffect(() => { dispatch(loadProduct()) }, [])
 
@@ -15,7 +20,7 @@ const Cards = () => {
    return (
     <div className={styles.contenedor_cardscero}>
       <div className={styles.contenedor_cards}>
-        {productCard && productCard.map((e, i) => {
+        {error.length > 0 ? (<p>{error}</p>) : (productCard && productCard.map((e, i) => {
           return (
             <Card
               key={i}
@@ -23,9 +28,10 @@ const Cards = () => {
               image={e.image}
               price={e.price}
               id={e._id}
+              allProduct={e}
             />
           )
-        })}
+        }))}
       </div>
     </div>
   )

@@ -1,9 +1,15 @@
-import React from 'react';
-import s from "./Pagination.module.css"
+import React, { useContext } from 'react';
+import ProductsContext from "../../context/products/productsContext.js";
+import s from "./Pagination.module.css";
 
-const Pagination = ({ page, total, limites, setPage }) => {
+const Pagination = () => {
 
-  const totalPages = Math.ceil(total / limites)
+  const { page, setPage, products } = useContext(ProductsContext);
+
+  let total = products.total;
+  let limit = products.limit
+
+  const totalPages = Math.ceil(total / limit)
 
   const handleClick = (newPage) => {
       setPage(newPage + 1);

@@ -61,7 +61,8 @@ const Register = () => {
       <HeadPage />
       <section className={styles.container_position}>
         <div className={styles.register_container}>
-          <div className={styles.register_container_texto}>
+
+          <div className={styles.register_container_welcome}>
             <Link to="/login" style={{ textDecoration: "none" }}>
               <h2 className={styles.register_title}>Welcome Back</h2>
             </Link>
@@ -76,9 +77,9 @@ const Register = () => {
           </div>
 
           <div className={styles.form_container}>
-            <h1 className={styles.form_title}>Create Account</h1>
 
-            <form className={styles.form_register} onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+            <h1 className={styles.form_title}>Create Account</h1>
               <input
                 type="email"
                 placeholder="Email"
@@ -195,7 +196,7 @@ const Register = () => {
               )}
 
               <button type="submit" className={styles.green_btn}>
-                Registrarse
+                Sigin Up
               </button>
             </form>
           </div>

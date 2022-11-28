@@ -1,11 +1,15 @@
+import React, { useContext } from 'react';
+import ProductsContext from "../../context/products/productsContext.js";
 import styles from "../Sort/Sort.module.css"
 
-const Sort = ({ setSort }) => {
+const Sort = () => {
+
+  const { setSort } = useContext(ProductsContext)
 
   const handleSort = (e) => {
     e.preventDefault()
-      const sort = e.target.value
-      setSort(sort)
+    const sort = e.target.value
+    setSort(sort)
   };
 
   return (

@@ -37,19 +37,11 @@ const Login = () => {
       <HeadPage />
       <section className={styles.container_position}>
         <div className={styles.login_container}>
-          <div className={styles.login_container_title}>
-            <Link to="/register" style={{ textDecoration: "none" }}>
-              <h2 className={styles.title}>New Here?</h2>
-            </Link>
-
-            <Link to="/register" style={{ textDecoration: "none" }}>
-              <p className={styles.subtitle}>Sing up</p>
-            </Link>
-          </div>
+          
 
           <div className={styles.container_form}>
-            <h1 className={styles.form_title}>Login to Your Account</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
+            <h1 className={styles.form_title}>Login to Your Account</h1>
               <input
                 type="email"
                 placeholder="Email"
@@ -57,7 +49,7 @@ const Login = () => {
                 onChange={handleChange}
                 value={data.email}
                 required
-                className={styles.input}
+                className={styles.inputs}
               /> 
               {errors.email && (
                 <div className={styles.errors}>{errors.email}</div>
@@ -70,26 +62,38 @@ const Login = () => {
                 onChange={handleChange}
                 value={data.password}
                 required
-                className={styles.input}
+                className={styles.inputs}
               />
               {errors.password && (
                 <p className={styles.errors}>{errors.password}</p>
               )}
           
-              <button type="submit" className={styles.green_btn}>
-                Sing In
-              </button>
+              <button type="submit" className={styles.green_btn}>Sing In</button>
             </form>
-            <button onClick={loginWithRedirect} className={styles.green_btn} >
+            <div>
+              <button onClick={loginWithRedirect} className={styles.green_btn} >
               Sing In with Auth0 and Google
-            </button>
+              </button>
+            </div>
+           
 
             {error && (
               <div>
                 <p>{error}</p>
               </div>
             )}
+         </div>
+           <div className={styles.box_Title_New_Here}>
+            <Link to="/register" style={{ textDecoration: "none" }}>
+              <h2 className={styles.title_new_here }>New Here?</h2>
+            </Link>
+
+            <Link to="/register" style={{ textDecoration: "none" }}>
+              <p className={styles.subtitle_Sign_up}>Sing up</p>
+            </Link>
           </div>
+
+          
         </div>
       </section>
     </div>

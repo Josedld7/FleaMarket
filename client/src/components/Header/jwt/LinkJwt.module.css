@@ -38,3 +38,12 @@
   height: 1.8rem;
 }
 
+.container_register_login{
+display: flex;
+flex-direction: row;
+align-items: center;
+color: #ffff;
+}
+.labels{
+  color: #ffff;
+}

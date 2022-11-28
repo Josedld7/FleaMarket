@@ -1,6 +1,11 @@
+import React, { useContext } from 'react';
+import ProductsContext from "../../context/products/productsContext.js";
 import styles from "./SearchBar.module.css"; 
 import lupa from '../../assets/lupita.png'
-const SearchBar = ({ setName }) => {
+
+const SearchBar = () => {
+
+  const { setName } = useContext(ProductsContext);
 
   const handleInputChange = (e) => {
     setName(e.target.value)

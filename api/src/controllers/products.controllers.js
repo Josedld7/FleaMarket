@@ -63,6 +63,7 @@ export const getAllProducts = async (req, res) => {
     let name = req.query.name || "";
     let sort = req.query.sort || "";
 
+
     const findCategories = await Category.find();
 
     let allCategories = findCategories.map((c) => c.name);
@@ -85,6 +86,32 @@ export const getAllProducts = async (req, res) => {
       title: { $regex: name, $options: "i" },
       condition: { $regex: condition, $options: "i" },
     })
+
+      let page = parseInt(req.query.page) - 1 || 0;
+      let limit;
+      let condition = req.query.condition || "";
+      let category = req.query.category || "All";
+      let name = req.query.name || "";
+      let sort = req.query.sort || "";
+
+      const findCategories = await Category.find()
+      
+      let allCategories = findCategories.map((c) => c.name)
+      
+      category === "All"? category = [...allCategories] : category = req.query.category.split(",").toString();
+
+      req.query.category === "All" ? limit = 10 : limit = 31;
+      
+      let sortBy = {};
+      if(sort === "asc"){
+        sortBy["price"] = 1;
+      }
+      if(sort === "desc") {
+        sortBy["price"] = -1;
+      }
+      
+      const products = await Products.find({ title: {$regex: name, $options: 'i'}, condition: {$regex:condition, $options: 'i'} })
+
       .sort(sortBy)
       .skip(page * limit)
       .limit(limit)
@@ -109,6 +136,7 @@ export const getAllProducts = async (req, res) => {
       })
       .exec();
 
+
     const result = {
       total,
       page: page + 1,
@@ -120,6 +148,30 @@ export const getAllProducts = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+
+      const result = {
+        total,
+        page: page + 1,
+        limit,
+        filterProducts
+      }
+
+      
+      if(result.filterProducts.length === 0){
+        const nameProducts = await Products.find({title: {$regex: name, $options: "i"}});
+        if(!nameProducts){
+          res.status(400).json({ message: "En el momento no existen productos con la categoria seleccionada"})
+        } else {
+          res.status(400).json({ message: "No se encontro ningun producto con la descripcion de la busqueda"})
+        }
+      }else {
+        res.status(200).json(result);
+      }
+    }
+    catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+
 };
 
 export const getProductsDashboard = async (req,res)=>{

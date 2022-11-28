@@ -3,16 +3,6 @@ import { BACK_DOMINIO } from "../../config.js";
 
 const host = BACK_DOMINIO;
 
-export function loadProducts(sort, category, name, condition, page){
-  return async function(dispatch){
-    const response = await axios.get(`${host}/api/products?category=${category}&sort=${sort}&condition=${condition}&name=${name}&page=${page}`)
-    dispatch({
-      type: "LOAD_PRODUCTS",
-      payload: response.data
-    })
-  }
-};
-
 export function loadProduct(id) {
   return async function (dispatch) {
     if (id) {
@@ -29,19 +19,6 @@ export function loadProduct(id) {
 
   }
 };
-
-export function loadCategories() {
-  return function (dispatch) {
-    return fetch(`${host}/api/category`)
-      .then((resp) => resp.json())
-      .then((data) => {
-        dispatch({
-          type: "LOAD_CATEGORIES",
-          payload: data,
-        });
-      });
-  };
-}
 
 export const postFormPay = (payload) => {
   return async function () {

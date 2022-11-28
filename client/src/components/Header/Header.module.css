@@ -58,9 +58,3 @@
   justify-content: center;
   margin: var(--header-margin-top-bottom);
 }
-
-/* SECCCION PAGINATION */
-.pagination {
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-}

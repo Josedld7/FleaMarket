@@ -15,7 +15,7 @@
 }
  
 .contenedor_search_button {
-  filter: opacity(55%);
+  filter: opacity(45%);
   margin-left: -2rem;
   position: absolute;
   background-color: transparent;
@@ -24,6 +24,7 @@
 }
  
 .icon_search {
+  margin-top: 2px;
   width: 1rem;
   height: 1rem;
 }
