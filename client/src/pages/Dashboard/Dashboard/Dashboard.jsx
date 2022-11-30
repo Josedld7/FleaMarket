@@ -9,7 +9,6 @@ import Products from "../products/products/Products";
 import Categories from "../categories/Categories";
 import Orders from "../orders/Orders";
 import styles from "../Dashboard/Dashboard.module.css"
-import Profile from "../profile/Profile";
 import logousers from "../../../assets/users.png"
 import logoprofile from "../../../assets/profile.png"
 const Dashboard = () => {
@@ -53,9 +52,6 @@ const Dashboard = () => {
           <Link to="/categories">
             <h1>categories</h1>
           </Link>
-          <Link to="/upDateProfile">
-            <h1>profile</h1>
-          </Link>
         </aside>
 
          
@@ -66,7 +62,6 @@ const Dashboard = () => {
           <Route exact path="/products" component={Products} />
           <Route exact path="/orders" component={Orders} />
           <Route exact path="/categories" component={Categories} />
-          <Route exact path="/upDateProfile" component={Profile} />
         </section>
       </main>
     </div>

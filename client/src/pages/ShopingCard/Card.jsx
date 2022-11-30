@@ -55,9 +55,9 @@ const Card = (props) => {
 
       <div className={styles.block__shopingcontendorcinco}>
         
-        <button style={{ border: "0px" }} onClick={less}>-</button>
+        <button style={{ border: "0px", cursor: "pointer" }} onClick={less}>-</button>
         <button style={{ border: "0px" }} >{prices[props.index] / props.price}</button>
-        <button style={{ border: "0px" }} onClick={plus}>+</button>
+        <button style={{ border: "0px", cursor: "pointer" }} onClick={plus}>+</button>
 
       </div>
 

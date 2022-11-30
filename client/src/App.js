@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import Review from "./components/Reviews/Reviews.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard.jsx";
 import Access from "./components/Access/Access.jsx";
+import ProfileForm from "./pages/profile/ProfileForm.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/review" component={Review} />
           <Route exact path="/access" component={Access} />
 
+          <PrivateRoute path="/profile/update" component={ProfileForm} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/payment" component={Payment} />
           <PrivateRoute path="/shoping" component={ShopingCard} />

@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import AuthContext from "../../../context/authProvider";
+import AuthContext from "../../context/authProvider";
 
 
-const Profile = () => {
+const ProfileForm = () => {
 
   const { userStorage } = useContext(AuthContext);
   if (userStorage) {
@@ -12,7 +12,7 @@ const Profile = () => {
 
   const [user, setUser] = useState("");
   const [changes, setChanges] = useState({});
-
+  console.log("cambios", changes)
   const getUser = () => {
     axios.get(`http://localhost:3001/api/user/${id}`)
       .then((data) => { setUser(data.data) })
@@ -79,4 +79,4 @@ const Profile = () => {
   )
 }
 
-export default Profile;
+export default ProfileForm;
